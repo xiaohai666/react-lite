@@ -1,8 +1,8 @@
-interface route {
-    path: string
+interface Route {
+  path: string
 }
 
-interface menu {
-    path: string,
-    name: string
+interface Menu {
+  path: string,
+  name: string
 }

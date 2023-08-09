@@ -1,8 +1,5 @@
-const routers: route[] = [
-    { path: '/user' },
-
-
-
-    { path: '/about' },
-]
-export default routers
+const routers: Route[] = [
+  { path: '/user' },
+  { path: '/about' },
+];
+export default routers;
