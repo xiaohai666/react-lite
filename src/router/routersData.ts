@@ -1,5 +1,5 @@
 const routers: Route[] = [
   { path: '/user' },
-  { path: '/about' },
+  { path: '/home' },
 ];
 export default routers;

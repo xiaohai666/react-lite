@@ -24,11 +24,14 @@ module.exports = {
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
+    "@unocss"
   ],
   rules: {
     "max-len": ["error", { "code": 300 }], //单行最大长度
     "react/react-in-jsx-scope": 0,//使用JSX时必须引入 React
     "react/jsx-one-expression-per-line": 0,//每个JSX元素单独一行
+    'no-plusplus': 0,
+    "@typescript-eslint/prefer-for-of": 0,
 
     // 无障碍配置
     "jsx-a11y/anchor-is-valid": 0,
