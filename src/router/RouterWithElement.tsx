@@ -4,7 +4,9 @@ import { Routes, Route } from "react-router-dom";
 import { capitalize } from '../common/util';
 import routers from './routersData';
 import MainLayout from '../layout/MainLayout/MainLayout';
-
+interface RouteType {
+  path: string;
+}
 //快速导入工具函数
 const lazyLoad = (moduleName: string) => {
   const Module = lazy(() => import(`../pages/${moduleName}/index.tsx`));
@@ -18,7 +20,7 @@ const lazyLoad = (moduleName: string) => {
 //   return token ? children : <Navigate to="/login" />;
 // };
 
-// 去掉url中的中划线「-」，格式化为驼峰格式 
+// 去掉url中的中划线「-」，格式化为驼峰格式
 const getComponentPath = (pathname: string) => {
   return pathname.replace(/^\//, '')
     .split('/')
@@ -26,7 +28,7 @@ const getComponentPath = (pathname: string) => {
     .join('/');
 };
 
-const getRoute = (route: route) => {
+const getRoute = (route: RouteType) => {
   return <Route key={route.path} path={route.path} element={lazyLoad(getComponentPath(route.path))} />
 }
 

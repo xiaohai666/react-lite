@@ -9,7 +9,7 @@
 import { createPortal } from 'react-dom';
 import * as React from 'react';
 
-import { notification, Spin } from 'antd';
+import { Spin } from 'antd';
 import axios from './axios';
 
 declare module 'axios' {
@@ -44,12 +44,12 @@ function showLoading() {
 }
 
 // 隐藏loading
-function hideLoading() {
-  requestCount--;
-  if (requestCount === 0) {
-    document.body.removeChild(document.getElementById('loading'));
-  }
-}
+// function hideLoading() {
+//   requestCount--;
+//   if (requestCount === 0) {
+//     document.body.removeChild(document.getElementById('loading'));
+//   }
+// }
 
 export const api = axios.create({
   timeout: 3000,
@@ -72,8 +72,8 @@ api.interceptors.request.use((config) => {
 // 返回拦截
 api.interceptors.response.use(
   (response) => {
-    const { data, status, statusText } = response;
-    const { code, message } = data;
+    const { data, statusText } = response;
+    const { code } = data;
     console.log('response:', response);
     if (code === 200) {
       return data;

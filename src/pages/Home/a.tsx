@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
-
-export default function Playground({ fn }) {
+export default function Playground({ fn }: { fn: (num: number) => void }) {
   return (
     <button
       type="button"
